@@ -1,19 +1,19 @@
-# <div align='center'>PouCode</div>
+# <div align='center'>Dev Baileys</div>
 
 <p align="center">
 
-  <img src="https://files.catbox.moe/i497x5.jpg" width="180" alt="Pou"/>
+  <img src="./assets/dev-baileys-banner.jpg" width="100%" alt="Dev Baileys"/>
 
 </p>
 
 <div align='center'>
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub](https://img.shields.io/badge/source-GitHub-black.svg)](https://github.com/pou-code/Baileys)
+[![GitHub](https://img.shields.io/badge/source-GitHub-black.svg)](https://github.com/toxicdipanshuu248/dev-baileys)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](package.json)
 
-A WebSockets library for interacting with WhatsApp Web, maintained under the **PouCode** brand.
-This project is a fork built on top of [Baileys](https://github.com/WhiskeySockets/Baileys) by WhiskeySockets.
+A WebSockets library for interacting with WhatsApp Web, maintained as **Dev Baileys**.
+This project is built on top of [Baileys](https://github.com/WhiskeySockets/Baileys) by WhiskeySockets.
 
 </div>
 
@@ -22,13 +22,13 @@ This project is a fork built on top of [Baileys](https://github.com/WhiskeySocke
 ## Installation
 Install directly from GitHub (not published on npm registry):
 ```bash
-npm install github:pou-code/Baileys
+npm install github:toxicdipanshuu248/dev-baileys
 ```
 
 Or add it to your `package.json` manually:
 ```json
 "dependencies": {
-  "@poucode/baileys": "github:pou-code/Baileys"
+  "dev-baileys": "github:toxicdipanshuu248/dev-baileys"
 }
 ```
 
@@ -37,7 +37,7 @@ Already have a bot built on the original `@whiskeysockets/baileys` and don't wan
 name points to this fork:
 ```json
 "dependencies": {
-  "@whiskeysockets/baileys": "github:pou-code/Baileys"
+  "@whiskeysockets/baileys": "github:toxicdipanshuu248/dev-baileys"
 }
 ```
 With this alias, keep using `require('@whiskeysockets/baileys')` in your code as-is — npm will
@@ -45,7 +45,7 @@ resolve it to this fork under the hood.
 
 You can also pin to a specific branch or commit:
 ```bash
-npm install github:pou-code/Baileys#main
+npm install github:toxicdipanshuu248/dev-baileys#main
 ```
 
 ## Import
@@ -53,7 +53,7 @@ npm install github:pou-code/Baileys#main
 const {
   default: makeWASocket,
   // other exports
-} = require('@poucode/baileys');
+} = require('dev-baileys');
 ```
 
 ---
@@ -65,10 +65,10 @@ const {
 const {
   default: makeWASocket,
   Browsers
-} = require('@poucode/baileys');
+} = require('dev-baileys');
 
 const client = makeWASocket({
-  browser: Browsers.poucode('Chrome'),
+  browser: Browsers.devBaileys('Chrome'),
   printQRInTerminal: true
 });
 ```
@@ -79,10 +79,10 @@ const {
   default: makeWASocket,
   fetchLatestWAWebVersion,
   Browsers
-} = require('@poucode/baileys');
+} = require('dev-baileys');
 
 const client = makeWASocket({
-  browser: Browsers.poucode('Chrome'),
+  browser: Browsers.devBaileys('Chrome'),
   printQRInTerminal: false,
   version: await fetchLatestWAWebVersion(),
   aiLabel: false // set true to show an AI label on messages sent by the bot
@@ -100,7 +100,7 @@ console.log("Your pairing code: " + code);
 const {
   default: makeWASocket,
   makeInMemoryStore
-} = require('@poucode/baileys');
+} = require('dev-baileys');
 const pino = require('pino');
 
 const store = makeInMemoryStore({
@@ -134,21 +134,21 @@ logged into the same account). It does not affect delivery to the recipient.
 ```javascript
 // Sent to the recipient, but NOT synced to your other devices
 await client.relayMessage(m.chat, {
-  conversation: "Hello from PouCode"
+  conversation: "Hello from Dev Baileys"
 }, {
   noSelfSync: true
 });
 
 // Sent to the recipient AND synced to your other devices (default behavior)
 await client.relayMessage(m.chat, {
-  conversation: "Hello from PouCode"
+  conversation: "Hello from Dev Baileys"
 }, {
   noSelfSync: false
 });
 
 // Also works through sendMessage
 await client.sendMessage(m.chat, {
-  text: "Hello from PouCode"
+  text: "Hello from Dev Baileys"
 }, {
   noSelfSync: true
 });
@@ -157,7 +157,7 @@ await client.sendMessage(m.chat, {
 ## Send an orderMessage
 ```javascript
 const fs = require('fs');
-const thumbnail = fs.readFileSync('./pouthumb.jpg');
+const thumbnail = fs.readFileSync('./devthumb.jpg');
 
 await client.sendMessage(m.chat, {
   thumbnail,
@@ -191,7 +191,7 @@ await client.relayMessage(m.chat, {
   productMessage: {
     title: "Product.pdf",
     description: "Product description",
-    thumbnail: { url: "./pouthumb.jpg" },
+    thumbnail: { url: "./devthumb.jpg" },
     productId: "EXAMPLE_TOKEN",
     retailerId: "EXAMPLE_RETAILER_ID",
     url: "https://example.com",
@@ -212,7 +212,7 @@ await client.relayMessage(m.chat, {
 ## Send an interactiveMessage
 ```javascript
 await client.sendMessage(m.chat, {
-  image: { url: "./pouimg.jpg" },
+  image: { url: "./devimg.jpg" },
   text: "body",
   title: "title", // required when sending media
   footer: "footer",
@@ -272,7 +272,7 @@ await client.sendText(m.chat, "Hello!", {
 
 ## Send image
 ```javascript
-await client.sendImage(m.chat, { url: "./pouimg.jpg" }, "Caption", {
+await client.sendImage(m.chat, { url: "./devimg.jpg" }, "Caption", {
   contextInfo: {
     mentionedJid: [m.chat]
   }
@@ -308,7 +308,7 @@ await client.sendVideo(m.chat, { url: "./video.mp4" }, "Caption", {
 
 ## Send audio
 ```javascript
-await client.sendAudio(m.chat, { url: "./pouaudio.mp3" }, {
+await client.sendAudio(m.chat, { url: "./Devaudio.mp3" }, {
   contextInfo: {
     mentionedJid: [m.chat]
   }
@@ -391,7 +391,7 @@ await client.statusMention(m.chat, {
 
 # Credits
 
-PouCode is a fork of [Baileys](https://github.com/WhiskeySockets/Baileys), originally created by
+Dev Baileys is a fork of [Baileys](https://github.com/WhiskeySockets/Baileys), originally created by
 [Adhiraj Singh](https://github.com/adiwajshing) and maintained by the WhiskeySockets community.
 All credit for the underlying protocol implementation goes to the original authors and contributors.
 See [LICENSE](LICENSE) for the full license text and copyright notices.

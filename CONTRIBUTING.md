@@ -1,13 +1,13 @@
-# Contributing to PouCode
+# Contributing to Dev Baileys
 
-Thanks for your interest in contributing! PouCode is a fork of
+Thanks for your interest in contributing! Dev Baileys is a fork of
 [Baileys](https://github.com/WhiskeySockets/Baileys); contributions here follow
 similar conventions to the upstream project.
 
 ## Reporting issues
 
 - Search existing issues before opening a new one.
-- Include: Node.js version, `@poucode/baileys` version, a minimal reproduction,
+- Include: Node.js version, `dev-baileys` version, a minimal reproduction,
   and the relevant log output (with sensitive data like phone numbers redacted).
 
 ## Submitting changes
@@ -22,8 +22,8 @@ similar conventions to the upstream project.
 ## Development setup
 
 ```bash
-git clone https://github.com/poucode/baileys.git
-cd baileys
+git clone https://github.com/toxicdipanshuu248/dev-baileys.git
+cd dev-baileys
 npm install
 npm run build:tsc
 npm test
